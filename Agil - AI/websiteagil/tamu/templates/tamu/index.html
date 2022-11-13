@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahasiswa </title>
+
+<!-- CSS 1 -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+<!-- CSS BOOTSTRAP -->
+<link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.css' %}">
+</head>
+
+<body>
+<img id="banner" src= "{% static 'buku/img/crud.jpg' %}" alt="">
+<div id="menu">
+    <!-- Menu -->
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/" class="">About</a></li>
+        <li><a href="/buku/" class="">Daftar MK</a></li>
+        <li><a href="/tamu/" class="">Mahasiswa</a></li>
+    </ul>
+</div>
+
+<div class="container">
+    <br>
+        <from method="POST">
+        {% csrf_token %}
+        <table>
+                {{BukuTamu.as_table}}
+        </table>
+        <button class="btn btn-success"type="submit">Simpan</button>
+
+        </from>
+    <br>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <span class="text-dark">Copyright 2022</span>
+    </div>
+</footer>
+<!-- FOOTER -->
+
+<!-- JS BOOTSTRAP-->
+<script srs="{% static 'vendor/bootstrap/bootstrap.js' %}" type="text/javascripts"></script>
+<script srs="{% static 'vendor/bootstrap/jquery-3.3.1.slim.min.js' %}" type="text/javascripts"></script>
+<script srs="{% static 'vendor/bootstrap/popper.min.js' %}" type="text/javascripts"></script>
+</body>
+</html>
